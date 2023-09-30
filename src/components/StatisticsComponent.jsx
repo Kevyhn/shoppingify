@@ -31,7 +31,7 @@ const StatisticsComponent = () => {
 			})
 		})
 		getTops(listTotal);
-		getSummary(listTotal)
+		getSummary(listTotal);
 	}
 
 	const getTops = (list) => {

@@ -33,15 +33,16 @@ const ItemDetails = ({setDetails, details, item, items, setItems, setList, list}
 		setDetails(false);
 	}
 
+	const handleBack = (e) => {		
+		setDetails(false);
+		if (window.innerWidth >= 810) return null;
+		let aside = e.target.ownerDocument.body.firstElementChild.firstElementChild.lastChild;		
+		aside.classList.toggle('move');
+	}
+
 	return (
 		<div className="item-details">
-			<button onClick={(e) => {
-				//crear una funcion aparte para que no quede feo :/
-				setDetails(false)
-				if (window.innerWidth >= 810) return null;
-				let aside = e.target.ownerDocument.childNodes[1].childNodes[7].firstElementChild.firstElementChild.childNodes[2];
-				aside.classList.toggle('move');
-			}}><FontAwesomeIcon icon={faArrowLeft}/> Back</button>					
+			<button onClick={(e) => handleBack(e)}><FontAwesomeIcon icon={faArrowLeft}/> Back</button>					
 			{item.image ? (
 				<div className="image-container">
 					<img src={item.image} alt={`image of a ${item.name}`}/>

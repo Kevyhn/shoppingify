@@ -10,8 +10,8 @@ const NavComponent = ({list}) => {
 	const handleLogout = async () => await logout();
 
 	const handleAside = (e) => {
-		if (window.innerWidth >= 810) return null;
-		let aside = e.target.ownerDocument.childNodes[1].childNodes[7].firstElementChild.firstElementChild.childNodes[2];
+		if (window.innerWidth >= 810) return null;		
+		let aside = e.target.ownerDocument.body.firstElementChild.firstElementChild.lastChild;
 		aside.classList.toggle('move');		
 	}
 	
@@ -33,7 +33,7 @@ const NavComponent = ({list}) => {
 					<FontAwesomeIcon icon={faChartSimple}/>
 					<span>Statistics</span>					
 				</Link>				
-			</div>
+			</div>			
 			<button style={{background: 'none', border: 'none', fontSize: '18px', color: '#eb5757', cursor: 'pointer'}} onClick={handleLogout}><FontAwesomeIcon icon={faRightToBracket}/></button>
 			<div className="cart-icon" onClick={e => handleAside(e)}>				
 				<span>{list.length}</span>

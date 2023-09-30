@@ -10,15 +10,15 @@ import {faX} from '@fortawesome/free-solid-svg-icons'
 const AsideComponent = ({setItems, items, details, setDetails, item, list, setList}) => {
 	const [open, setOpen] = useState(false);
 
-	const handleAside = (e) => {
-		let aside = e.target.ownerDocument.childNodes[1].childNodes[7].firstElementChild.firstElementChild.childNodes[2];	
+	const handleAside = (e) => {	
+		let aside = e.target.ownerDocument.body.firstElementChild.firstElementChild.lastChild;			
 		aside.classList.toggle('move');
 	}
 
 	return (
 		<div className="aside">
 			{
-				window.innerWidth <= 430 ? <button onClick={e => handleAside(e)} style={{position: 'absolute', top: '5px', right: '10px', background: 'none', border: 'none', fontSize: '18px', cursor: 'pointer'}}><FontAwesomeIcon icon={faX}/></button> : ''
+				window.innerWidth <= 430 ? <FontAwesomeIcon icon={faX} onClick={e => handleAside(e)} className="close"/> : ''
 			}
 			<div className="add-container">
 				<img src={icon1} alt="icon"/>

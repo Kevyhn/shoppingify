@@ -227,6 +227,17 @@ body {
 	z-index: 500;
 }
 
+.aside .close {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background: none;
+	border: none;
+	font-size: 25px;
+	color: #fff;
+	cursor: pointer;
+}
+
 .aside .list-empty {
 	position: absolute;
 	width: 100%;

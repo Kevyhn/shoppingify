@@ -5,7 +5,7 @@ import {doc, getDoc, setDoc} from 'firebase/firestore'
 import {db} from '../firebase'
 import {v4 as uuidv4} from 'uuid'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCalendarDays} from '@fortawesome/free-solid-svg-icons'
+import {faCalendarDays, faChevronRight} from '@fortawesome/free-solid-svg-icons'
 
 export const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -112,7 +112,7 @@ const HistoryComponent = ({history, setHistory}) => {
 												<div className="info">
 													<span className="date"><FontAwesomeIcon icon={faCalendarDays}/>{list.map(prop => prop.createdAt)}</span>
 													<span className={list.map(prop => prop.status).toString().replace(/,/g, '') == 'completed' ? 'status' : 'status-cancel'} onClick={() => handleStatus(list.map(prop => prop.listId))}>{list.map(prop => prop.status)}</span>
-													<span className="details-button" onClick={(e) => getListDetails(list.map(prop => prop.listId))}>></span>				
+													<span className="details-button" onClick={(e) => getListDetails(list.map(prop => prop.listId))}><FontAwesomeIcon icon={faChevronRight}/></span>				
 												</div>
 											</div>
 										)

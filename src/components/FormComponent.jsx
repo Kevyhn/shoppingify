@@ -29,8 +29,9 @@ const FormComponent = ({setOpen, setItems, items}) => {
 		navigate('/items');
 		form.current.reset();
 		if (window.innerWidth >= 810) return null;
-		let aside = e.target.ownerDocument.childNodes[1].childNodes[7].firstElementChild.firstElementChild.childNodes[2];
+		let aside = e.target.ownerDocument.body.firstElementChild.firstElementChild.lastChild;;
 		aside.classList.toggle('move');	
+		setOpen(false);
 	}
 	
 	const setCategory = (e) => {

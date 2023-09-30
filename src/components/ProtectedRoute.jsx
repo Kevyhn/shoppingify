@@ -6,7 +6,7 @@ export const ProtectedRoute = ({children}) => {
 
 	if (loading) return (
 		<div className="loading-container">
-			<div class="spinner"></div>
+			<div className="spinner"></div>
 		</div>
 	)
 

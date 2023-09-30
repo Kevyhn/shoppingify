@@ -67,11 +67,13 @@ const ItemsList = ({list, setList}) => {
 				alert('Complete all your lists before creating another');				
 				setStatus('completed');
 				setOpenCancel(false);
-				navigate('/history')
+				navigate('/history');
+				let aside = e.target.ownerDocument.body.firstElementChild.firstElementChild.lastChild;			
+				aside.classList.toggle('move');
 				return null;
 			}			
 			await setDoc(doc(db, user.uid, 'list'), {lists});														
-			setStatus('completed');									
+			setStatus('completed');												
 		} catch (error) {
 			console.log(error);
 		}
